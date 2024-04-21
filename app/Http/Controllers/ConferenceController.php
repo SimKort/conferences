@@ -10,12 +10,12 @@ class ConferenceController extends Controller
     public function index()
     {
         $conferences = Conference::all();
-        return view('.index', compact('conferences'));
+        return view('index', compact('conferences'));
     }
 
     public function create()
     {
-        return view('conferences.create');
+        return view('create');
     }
 
     public function store(ConferenceRequest $request)
@@ -26,7 +26,7 @@ class ConferenceController extends Controller
 
     public function edit(Conference $conference)
     {
-        return view('conferences.edit', compact('conference'));
+        return view('edit', compact('conference'));
     }
 
     public function update(ConferenceRequest $request, Conference $conference)

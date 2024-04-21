@@ -15,7 +15,7 @@ class ConferenceSeeder extends Seeder
         Conference::create([
             'title' => 'Example Conference 1',
             'description' => 'This is the description of the first example conference.',
-            'date' => now()->addDays(10),
+            'date' => now()->addDays(10)->toDateString(),
             'address' => '123 Example St, Example City, Country',
             'participants' => 100,
         ]);
@@ -23,7 +23,7 @@ class ConferenceSeeder extends Seeder
         Conference::create([
             'title' => 'Example Conference 2',
             'description' => 'This is the description of the second example conference.',
-            'date' => now()->addDays(30),
+            'date' => now()->addDays(30)->toDateString(),
             'address' => '456 Example Rd, Example Town, Country',
             'participants' => 350,
         ]);

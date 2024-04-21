@@ -28,7 +28,7 @@ class ConferenceRequest extends FormRequest
             'description' => 'required|string',
             'date' => 'required|date',
             'address' => 'required|string|max:255',
-            'participants' => 'required|integer|min:0',
+            'participants' => 'required|integer|min:20',
         ];
     }
 }

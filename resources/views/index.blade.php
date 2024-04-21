@@ -28,7 +28,7 @@
                     <td>{{ $conference->participants }}</td>
                     @auth
                         <td>
-                            <form action="{{ route('conferences.edit', $conference->id) }}" method="POST" style="display: inline;">
+                            <form action="{{ route('conferences.edit', $conference->id) }}" method="GET" style="display: inline;">
                                 <button type="submit" class="btn btn-danger btn-sm" style="background-color: white; color: purple; border-color: purple;">Edit</button>
                             </form>
                             <form action="{{ route('conferences.destroy', $conference->id) }}" method="POST" style="display: inline;">
@@ -45,7 +45,7 @@
 
         @auth
             <div class="text-right" style="margin-top: 20px;">
-                <form action="{{ route('conferences.create', $conference->id) }}" method="POST" style="display: inline;">
+                <form action="{{ route('conferences.create') }}" method="GET" style="display: inline;">
                     <button type="submit" class="btn btn-sm" style="background-color: purple; border-color: #610243; color: white;">Add Conference</button>
                 </form>
             </div>
