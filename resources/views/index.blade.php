@@ -28,7 +28,9 @@
                     <td>{{ $conference->participants }}</td>
                     @auth
                         <td>
-                            <a href="{{ route('conferences.edit', $conference->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="{{ route('conferences.edit', $conference->id) }}" method="POST" style="display: inline;">
+                                <button type="submit" class="btn btn-danger btn-sm" style="background-color: white; color: purple; border-color: purple;">Edit</button>
+                            </form>
                             <form action="{{ route('conferences.destroy', $conference->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
@@ -42,8 +44,10 @@
         </table>
 
         @auth
-            <div class="text-center">
-                <a href="{{ route('conferences.create') }}" class="btn btn-primary">Add Conference</a>
+            <div class="text-right" style="margin-top: 20px;">
+                <form action="{{ route('conferences.create', $conference->id) }}" method="POST" style="display: inline;">
+                    <button type="submit" class="btn btn-sm" style="background-color: purple; border-color: #610243; color: white;">Add Conference</button>
+                </form>
             </div>
         @endauth
 
